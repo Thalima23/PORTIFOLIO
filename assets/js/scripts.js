@@ -112,9 +112,9 @@ formulario.addEventListener('submit', function(event){
     const campoAssunto = document.querySelector('#assunto');
     const txtAssunto = document.querySelector('#txtAssunto');
 
-    // Nome precisa ter no mínimo 5 caracteres
+    // Campo Assunto precisa ter no mínimo 5 caracteres
     if(campoAssunto.value.length < 5){
-        txtAssunto.innerHTML = ' O Nome deve ter no mínimo 3 caracteres'
+        txtAssunto.innerHTML = ' O campo Assunto deve ter no mínimo 3 caracteres'
         campoAssunto.focus();
         return;
     }else{
