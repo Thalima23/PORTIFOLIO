@@ -122,6 +122,19 @@ formulario.addEventListener('submit', function(event){
 
     }
 
+    // Validação do campo mensagem
+    const campoMensagem = document.querySelector('#mensagem');
+    const txtMensagem = document.querySelector('#txtMensagem');
+
+// Campo Mensagem precisa ter no mínimo 10 caracteres
+    if(campoMensagem.value.length < 5){
+    txtMensagem.innerHTML = 'Digite pelo menos 5 caracteres na mensagem';
+    campoMensagem.focus();
+        return;
+    } else {
+    txtMensagem.innerHTML = '';
+}
+
     // Se passou por todas as validações, envia o formulário
     formulario.submit();
 })
