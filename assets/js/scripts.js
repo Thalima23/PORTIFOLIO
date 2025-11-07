@@ -1,6 +1,13 @@
 // Selecionar a Seção About
 const about = document.querySelector('#about');
 
+// Selecionar o formulário
+const formulario = document.querySelector('#formulario');
+
+// Expressao regular p/ validaçao de e-mail
+
+const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
 // Função para buscar os dados no GitHub
 async function getApiGithub() {
     try{
@@ -65,6 +72,59 @@ async function getApiGithub() {
         console.error(error);
     }
 }
+
+// Função de envio e validação do formulário
+formulario.addEventListener('submit', function(event){
+
+    // Impedir o envio automático do formulário
+    event.preventDefault();
+    
+    // Validação do campo nome
+    event.preventDefault(); //impede o envio automatico do formulário
+    const campoNome = document.querySelector('#nome');
+    const txtNome = document.querySelector('#txtNome');
+
+    // Nome precisa ter no mínimo 3 caracteres
+    if(campoNome.value.length < 3){
+        txtNome.innerHTML = ' O Nome deve ter no mínimo 3 caracteres'
+        campoNome.focus();
+        return;
+    }else{
+        txtNome.innerHTML = '';
+
+    }
+
+// Verifica se o e-mail é válido
+    const campoEmail = document.querySelector('#email');
+    const txtEmail = document.querySelector('#txtEmail');
+
+    // E-mail precisa ter no mínimo 3 caracteres
+    if(!campoEmail.value.match(emailRegex)) {
+        txtEmail.innerHTML = 'Digite um e-mail válido!'
+        campoEmail.focus();
+        return;
+    }else{
+        txtEmail.innerHTML = '';
+
+    }
+
+// Validação do campo assunto
+    const campoAssunto = document.querySelector('#assunto');
+    const txtAssunto = document.querySelector('#txtAssunto');
+
+    // Nome precisa ter no mínimo 5 caracteres
+    if(campoAssunto.value.length < 5){
+        txtAssunto.innerHTML = ' O Nome deve ter no mínimo 3 caracteres'
+        campoAssunto.focus();
+        return;
+    }else{
+        txtAssunto.innerHTML = '';
+
+    }
+
+    // Se passou por todas as validações, envia o formulário
+    formulario.submit();
+})
 
 // Chamar a função getAPIGithub()
 
