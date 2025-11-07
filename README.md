@@ -38,7 +38,7 @@ Para visualizar o projeto localmente, siga as instruções abaixo:
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone: https://github.com/Thalima23/PORTIFOLIO
 ```
 
 2. Abra o projeto no Visual Studio Code:
