@@ -79,8 +79,7 @@ formulario.addEventListener('submit', function(event){
     // Impedir o envio automático do formulário
     event.preventDefault();
     
-    // Validação do campo nome
-    event.preventDefault(); //impede o envio automatico do formulário
+    //validação do campo nome
     const campoNome = document.querySelector('#nome');
     const txtNome = document.querySelector('#txtNome');
 
